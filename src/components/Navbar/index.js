@@ -12,13 +12,13 @@ import {
   NavMenu,
 } from "./NavbarElements";
 
-export default function Navbar() {
+export default function Navbar({ toggle }) {
   return (
     <>
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">fulus</NavLogo>
-          <MobileIcon>
+          <MobileIcon onClick={toggle}>
             <FaBars />
           </MobileIcon>
           <NavMenu>
