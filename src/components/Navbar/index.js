@@ -15,7 +15,7 @@ export default function Navbar() {
     <>
       <Nav>
         <NavbarContainer>
-          <NavLogo to="/">dolla</NavLogo>
+          <NavLogo to="/">fulus</NavLogo>
           <MobileIcon>
             <FaBars />
           </MobileIcon>
