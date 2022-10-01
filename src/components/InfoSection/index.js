@@ -1,10 +1,39 @@
 import React from "react";
-import { Button } from "react-scroll";
+import { Button } from "../ButtonElements";
+import {
+  BtnWrap,
+  Column1,
+  Column2,
+  Heading,
+  Img,
+  ImgWrap,
+  InfoContainer,
+  InfoRow,
+  InfoWrapper,
+  Subtitle,
+  TextWrapper,
+  TopLine,
+} from "./InfoElements";
 
-export default function InfoSection() {
+export default function InfoSection({
+  lightBg,
+  id,
+  imgStart,
+  topLine,
+  lightText,
+  headline,
+  darkText,
+  description,
+  buttonLabel,
+  img,
+  alt,
+  primary,
+  dark,
+  dark2,
+}) {
   return (
     <>
-      <InfoContainer id={id}>
+      <InfoContainer lightBg={lightBg} id={id}>
         <InfoWrapper>
           <InfoRow imgStart={imgStart}>
             <Column1>
