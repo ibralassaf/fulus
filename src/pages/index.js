@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import HeroSection from "../components/HeroSection";
 import InfoSection from "../components/InfoSection";
-import { homeObjOne } from "../components/InfoSection/data";
+import {
+  homeObjOne,
+  homeObjThree,
+  homeObjTwo,
+} from "../components/InfoSection/data";
 import Navbar from "../components/Navbar";
+import Services from "../components/Services";
 import Sidebar from "../components/Sidebar";
 
 export default function Home() {
@@ -18,6 +23,9 @@ export default function Home() {
       <Navbar toggle={toggle} />
       <HeroSection />
       <InfoSection {...homeObjOne} />
+      <InfoSection {...homeObjTwo} />
+      <Services />
+      <InfoSection {...homeObjThree} />
     </>
   );
 }
