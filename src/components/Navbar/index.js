@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
 import {
+  LanguageButton,
   MobileIcon,
   Nav,
   NavbarContainer,
@@ -14,9 +16,14 @@ import {
   NavMenu,
 } from "./NavbarElements";
 
+const languages = {
+  en: { nativeName: "English" },
+  ar: { nativeName: "العربية" },
+};
+
 export default function Navbar({ toggle }) {
   const [scrollNav, setScrollNav] = useState(false);
-
+  const { t, i18n } = useTranslation();
   const changeNav = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true);
@@ -39,7 +46,7 @@ export default function Navbar({ toggle }) {
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
             <NavLogo onClick={toggleHome} to="/">
-              fulus
+              {t("navbar-logo")}
             </NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
@@ -55,7 +62,7 @@ export default function Navbar({ toggle }) {
                   offset={-80}
                   activeClass="active"
                 >
-                  About
+                  {t("navbar-about")}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -68,7 +75,7 @@ export default function Navbar({ toggle }) {
                   offset={-80}
                   activeClass="active"
                 >
-                  Discover
+                  {t("navbar-discover")}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -81,7 +88,7 @@ export default function Navbar({ toggle }) {
                   offset={-80}
                   activeClass="active"
                 >
-                  Services
+                  {t("navbar-services")}
                 </NavLinks>
               </NavItem>
               <NavItem>
@@ -94,12 +101,27 @@ export default function Navbar({ toggle }) {
                   offset={-80}
                   activeClass="active"
                 >
-                  Sign Up
+                  {t("navbar-signup")}
                 </NavLinks>
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to="/signin">Sign In</NavBtnLink>
+              <div>
+                {Object.keys(languages).map((lng) => (
+                  <LanguageButton
+                    key={lng}
+                    style={{
+                      fontWeight:
+                        i18n.resolvedLanguage === lng ? "bold" : "normal",
+                    }}
+                    type="submit"
+                    onClick={() => i18n.changeLanguage(lng)}
+                  >
+                    {languages[lng].nativeName}
+                  </LanguageButton>
+                ))}
+              </div>
+              <NavBtnLink to="/signin">{t("sign-in")}</NavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>
