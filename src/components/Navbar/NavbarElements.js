@@ -119,3 +119,14 @@ export const NavBtnLink = styled(LinkRoute)`
     color: #010606;
   }
 `;
+
+export const LanguageButton = styled.button`
+  margin: 10px 10px;
+  background: none;
+  color: white;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+`;
