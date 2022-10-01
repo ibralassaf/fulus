@@ -22,7 +22,7 @@
 
 </p>
 
-<p align="center"><img src="https://i.imgur.com/VKRj1jX.gif" alt="fulus gif" />
+<p align="center"><img src="/public/intro.gif" alt="fulus gif" />
 
 </p>
 
