@@ -38,7 +38,7 @@
 
 React Website using Styled Components and Smooth Scroll with moving background in the hero section with structured files and used i18next language library and implement it on first section with arabic language 🤟
 
-## 💻 Techstack
+## 💻 Tech Stack Used
 
 > The techs and tools.
 
